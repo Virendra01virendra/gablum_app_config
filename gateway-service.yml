@@ -1,0 +1,28 @@
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${REGISTRY_URI}
+
+server:
+  port: ${GATEWAY_PORT}
+
+spring:
+  application:
+    name: "gateway-service"
+
+zuul:
+  routes:
+    user-service: /api/users/**
+    proposals-service: /api/proposals/**
+    scheduler-service: /api/schedules/**
+    contracts-service: /api/contracts/**
+    auctions-service: /api/auctions/**
+    webapp-service: /**
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
