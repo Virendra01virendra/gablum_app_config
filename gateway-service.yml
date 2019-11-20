@@ -19,7 +19,9 @@ zuul:
     scheduler-service: /api/schedules/**
     contracts-service: /api/contracts/**
     auctions-service: /api/auctions/**
-    auctions-service: ws://localhost:${GATEWAY_PORT}/api/auctions/**
+    auctions-ws:
+      path: ws://localhost:${GATEWAY_PORT}/api/auctions/**
+      serviceId: auctions-service
     webapp-service: /**
 
 management:
