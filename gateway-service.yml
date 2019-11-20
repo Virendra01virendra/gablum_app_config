@@ -20,6 +20,8 @@ zuul:
     contracts-service: /api/contracts/**
     auctions-service: /api/auctions/**
     webapp-service: /**
+  host:
+    socket-timeout-millis: 20000
 
 management:
   endpoints:
@@ -37,7 +39,3 @@ hystrix:
 
 ribbon:
   ReadTimeout: 20000
-
-zuul:
-  host:
-    socket-timeout-millis: 20000
