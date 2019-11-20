@@ -21,7 +21,7 @@ zuul:
     auctions-service: /api/auctions/**
     webapp-service: /**
   host:
-    socket-timeout-millis: 20000
+    socket-timeout-millis: 4000
 
 management:
   endpoints:
@@ -35,8 +35,8 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 20000
+            timeoutInMilliseconds: 4000
 
 ribbon:
   ReadTimeout: 20000
-  ConnectTimeout: 20000
+  ConnectTimeout: 4000
