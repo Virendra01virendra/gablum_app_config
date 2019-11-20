@@ -18,6 +18,9 @@ zuul:
     proposals-service: /api/proposals/**
     scheduler-service: /api/schedules/**
     contracts-service: /api/contracts/**
+    autions-ws:
+      path: /api/auctions/ws/**
+      url: ws://auctions-service:4000/ws
     auctions-service: /api/auctions/**
     webapp-service: /**
   host:
