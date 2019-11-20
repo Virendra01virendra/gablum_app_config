@@ -38,5 +38,5 @@ hystrix:
             timeoutInMilliseconds: 4000
 
 ribbon:
-  # ReadTimeout: 4000
+  ReadTimeout: 20000
   ConnectTimeout: 4000
