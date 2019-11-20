@@ -12,6 +12,11 @@ server:
 spring:
   application:
     name: "user-service"
+  data:
+    mongodb:
+      uri: mongodb://${MONGO_NODE_USERNAME}:${MONGO_NODE_PASS}@${MONGO_NODE_URI}:${MONGO_NODE_PORT}/users
+
+  
 
 management:
   endpoints:
