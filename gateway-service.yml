@@ -19,9 +19,6 @@ zuul:
     scheduler-service: /api/schedules/**
     contracts-service: /api/contracts/**
     auctions-service: /api/auctions/**
-    auctions-ws:
-      path: ws://localhost:${GATEWAY_PORT}/api/auctions/**
-      serviceId: auctions-service
     webapp-service: /**
 
 management:
@@ -29,3 +26,18 @@ management:
     web:
       exposure:
         include: "*"
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000
+
+ribbon:
+  ReadTimeout: 20000
+
+zuul:
+  host:
+    socket-timeout-millis: 20000
