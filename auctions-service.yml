@@ -13,5 +13,6 @@ spring:
     name: "auctions-service"
   data:
     mongodb:
-      uri: mongodb://${MONGO_NODE_USERNAME}:${MONGO_NODE_PASS}@${MONGO_NODE_URI}:${MONGO_NODE_PORT}/auction
+      uri: mongodb://${MONGO_NODE_USERNAME}:${MONGO_NODE_PASS}@${MONGO_NODE_URI}:${MONGO_NODE_PORT}/
       authentication-database: admin
+      database: auction

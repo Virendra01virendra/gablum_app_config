@@ -15,8 +15,9 @@ spring:
     name: "contracts-service"
   data:
     mongodb:
-      uri: mongodb://${MONGO_NODE_USERNAME}:${MONGO_NODE_PASS}@${MONGO_NODE_URI}:${MONGO_NODE_PORT}/contracts
+      uri: mongodb://${MONGO_NODE_USERNAME}:${MONGO_NODE_PASS}@${MONGO_NODE_URI}:${MONGO_NODE_PORT}/
       authentication-database: admin
+      database: contracts
 
 management:
   endpoints:
