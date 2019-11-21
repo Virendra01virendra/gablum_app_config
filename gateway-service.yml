@@ -14,7 +14,9 @@ spring:
 
 zuul:
   routes:
-    user-service: /api/users/**
+    user-service: 
+      path: /api/users/**
+      sensitiveHeaders: 
     proposals-service: /api/proposals/**
     scheduler-service: /api/schedules/**
     contracts-service: /api/contracts/**
