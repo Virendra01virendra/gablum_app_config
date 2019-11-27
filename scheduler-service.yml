@@ -23,7 +23,9 @@ spring:
       org:
         quartz:
           jobStore:
+            class: org.quartz.impl.jdbcjobstore.JobStoreTX
             isClustered: true
+            dataSource: mongodb
           scheduler:
             instanceId: AUTO
 
