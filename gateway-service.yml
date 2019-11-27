@@ -22,10 +22,18 @@ zuul:
     user-service: 
       path: /api/users/**
       sensitiveHeaders: 
-    proposals-service: /api/proposals/**
-    scheduler-service: /api/schedules/**
-    contracts-service: /api/contracts/**
-    auctions-service: /api/auctions/**
+    proposals-service:
+      path: /api/proposals/**
+      sensitiveHeaders: 
+    scheduler-service:
+      path: /api/schedules/**
+      sensitiveHeaders: 
+    contracts-service:
+      path: /api/contracts/**
+      sensitiveHeaders: 
+    auctions-service:
+      path: /api/auctions/**
+      sensitiveHeaders: 
     webapp-service: /**
   host:
     socket-timeout-millis: 4000
