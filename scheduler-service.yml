@@ -17,6 +17,16 @@ spring:
       uri: mongodb://${MONGO_NODE_USERNAME}:${MONGO_NODE_PASS}@${MONGO_NODE_URI}:${MONGO_NODE_PORT}/
       authentication-database: admin
       database: scheduler
+  quartz:
+    properties:
+      org:
+        quartz:
+          jobStore:
+            class: org.quartz.impl.jdbcjobstore.JobStoreTX
+            isClustered: true
+            dataSource: mongodb
+          scheduler:
+            instanceId: AUTO
 
 
 management:
