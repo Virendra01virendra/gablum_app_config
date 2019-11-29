@@ -19,16 +19,6 @@ spring:
       database: scheduler
   security:
     secret: ${SECRET_KEY}
-  quartz:
-    properties:
-      org:
-        quartz:
-          jobStore:
-            class: org.quartz.impl.jdbcjobstore.JobStoreTX
-            isClustered: true
-            dataSource: mongodb
-          scheduler:
-            instanceId: AUTO
 
 
 management:
