@@ -38,7 +38,7 @@ zuul:
       sensitiveHeaders: 
     webapp-service: /**
   host:
-    socket-timeout-millis: 4000
+    socket-timeout-millis: 10000
 
 management:
   endpoints:
@@ -55,5 +55,5 @@ hystrix:
             timeoutInMilliseconds: 20000
 
 ribbon:
-  ReadTimeout: 5000
-  ConnectTimeout: 4000
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
