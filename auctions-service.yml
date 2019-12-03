@@ -18,3 +18,5 @@ spring:
       database: auction
   security:
     secret: ${SECRET_KEY}
+  rabbitmq:
+   addresses: amqp://${RABBIT_NODE_USERNAME}:${RABBIT_NODE_PASS}@${RABBIT_NODE_URI}:${RABBIT_NODE_PORT}/
