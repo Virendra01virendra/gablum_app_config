@@ -24,6 +24,13 @@ spring:
         - Path=/api/users/**
         filters:
         - RewritePath=/api/users(?<segment>/?.*), $\{segment}
+      routes:
+      - id: auctions
+        uri: lb://AUCTIONS-SERVICE
+        predicates:
+        - Path=/api/auctions/**
+        filters:
+        - RewritePath=/api/auctions(?<segment>/?.*), $\{segment}
   data:
     mongodb:
       uri: mongodb://${MONGO_NODE_USERNAME}:${MONGO_NODE_PASS}@${MONGO_NODE_URI}:${MONGO_NODE_PORT}/
