@@ -16,9 +16,10 @@ spring:
       discovery:
         locator:
           enabled: true
+          lowerCaseServiceId: true
       routes:
       - id: users
-        uri: lb://user-service:4000
+        uri: lb://USER-SERVICE
         predicates:
           - Path=/api/users/**
   data:
