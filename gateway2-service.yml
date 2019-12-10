@@ -24,7 +24,6 @@ spring:
         - Path=/api/users/**
         filters:
         - RewritePath=/api/users(?<segment>/?.*), $\{segment}
-      routes:
       - id: auctions
         uri: lb://AUCTIONS-SERVICE
         predicates:
