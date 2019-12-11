@@ -36,7 +36,9 @@ zuul:
     auctions-service:
       path: /api/auctions/**
       sensitiveHeaders: 
-    webapp-service: /**
+    webapp:
+      path: /**
+      url: http://webapp:4200
   host:
     socket-timeout-millis: 10000
 
