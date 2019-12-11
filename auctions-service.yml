@@ -1,0 +1,22 @@
+server:
+  port: ${APP_SERVER_PORT}
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${REGISTRY_URI}
+
+spring:
+  application:
+    name: "auctions-service"
+  data:
+    mongodb:
+      uri: mongodb://${MONGO_NODE_USERNAME}:${MONGO_NODE_PASS}@${MONGO_NODE_URI}:${MONGO_NODE_PORT}/
+      authentication-database: admin
+      database: auction
+  security:
+    secret: ${SECRET_KEY}
+  rabbitmq:
+   addresses: amqp://${RABBIT_NODE_USERNAME}:${RABBIT_NODE_PASS}@${RABBIT_NODE_URI}:${RABBIT_NODE_PORT}/

@@ -1,0 +1,31 @@
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      #      defaultZone: http://localhost:8000/eureka
+      defaultZone: ${REGISTRY_URI}
+
+server:
+  port: ${APP_SERVER_PORT}
+
+spring:
+  application:
+    name: "scheduler-service"
+  data:
+    mongodb:
+      uri: mongodb://${MONGO_NODE_USERNAME}:${MONGO_NODE_PASS}@${MONGO_NODE_URI}:${MONGO_NODE_PORT}/
+      authentication-database: admin
+      database: scheduler
+  rabbitmq:
+    addresses: amqp://${RABBIT_NODE_USERNAME}:${RABBIT_NODE_PASS}@${RABBIT_NODE_URI}:${RABBIT_NODE_PORT}/
+
+  security:
+    secret: ${SECRET_KEY}
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

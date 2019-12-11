@@ -1,0 +1,13 @@
+server:
+  port: ${APP_SERVER_PORT}
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${REGISTRY_URI}
+
+spring:
+  application:
+    name: "bid-service"
