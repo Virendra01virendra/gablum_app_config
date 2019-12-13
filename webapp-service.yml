@@ -11,3 +11,9 @@ eureka:
 spring:
   application:
     name: "webapp-service"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
