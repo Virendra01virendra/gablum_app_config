@@ -39,6 +39,7 @@ zuul:
     grafana:
       path: /grafana/**
       url: http://grafana:3000
+      sensitiveHeaders:
     # management:
     #   path: /actuator/**
     #   url: http;//localhost
