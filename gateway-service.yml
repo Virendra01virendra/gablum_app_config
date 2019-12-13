@@ -35,7 +35,13 @@ zuul:
       sensitiveHeaders: 
     auctions-service:
       path: /api/auctions/**
-      sensitiveHeaders: 
+      sensitiveHeaders:
+    grafana:
+      path: /grafana/**
+      url: http://grafana:3000
+    # management:
+    #   path: /actuator/**
+    #   url: http;//localhost
     webapp-service: /**
   host:
     socket-timeout-millis: 10000
