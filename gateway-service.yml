@@ -20,6 +20,7 @@ spring:
     secret: ${SECRET_KEY}
 
 zuul:
+  ignoredPatterns: /actuator/**, /routes/**
   routes:
     user-service: 
       path: /api/users/**
