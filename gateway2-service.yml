@@ -18,18 +18,25 @@ spring:
           enabled: true
           lowerCaseServiceId: true
       routes:
-      - id: users
-        uri: lb://USER-SERVICE
+      - id: auctionsocket
+        uri: lb:ws://AUCTIONS-SERVICE/
         predicates:
-        - Path=/api/users/**
-        filters:
-        - RewritePath=/api/users(?<segment>/?.*), $\{segment}
-      - id: auctions
-        uri: lb://AUCTIONS-SERVICE
-        predicates:
-        - Path=/api/auctions/**
+        - Path=/api/auctions/ws
         filters:
         - RewritePath=/api/auctions(?<segment>/?.*), $\{segment}
+
+      - id: auctionsocketfallback
+        uri: lb://AUCTIONS-SERVICE/
+        predicates:
+        - Path=/api/auctions/ws
+        filters:
+        - RewritePath=/api/auctions(?<segment>/?.*), $\{segment}
+
+      - id: rest
+        uri: lb://GATEWAY-SERVICE
+        predicates:
+        - Path=/**
+
   data:
     mongodb:
       uri: mongodb://${MONGO_NODE_USERNAME}:${MONGO_NODE_PASS}@${MONGO_NODE_URI}:${MONGO_NODE_PORT}/
